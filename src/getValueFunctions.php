@@ -22,7 +22,7 @@ use Revinate\GetterSetter\util;
 function get($doc, $fieldPath, $default = null, $pathSeparator = '.') {
     $path = (is_array($fieldPath) || ($fieldPath instanceof ArrayAccess))
         ? $fieldPath
-        : explode($pathSeparator, $fieldPath);
+        : explode($pathSeparator, $fieldPath ?? '');
     return getValueByArrayPath($doc, $path, $default);
 }
 
